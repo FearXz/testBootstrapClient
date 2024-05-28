@@ -10,4 +10,10 @@ export class ResultAreaComponent {
   textList: string[] = [];
 
   constructor(private sharedData: SharedDataService) {}
+
+  ngOnInit() {
+    this.sharedData.$listSubject.subscribe((list) => {
+      this.textList = list;
+    });
+  }
 }

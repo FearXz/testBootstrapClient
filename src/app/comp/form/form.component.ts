@@ -10,4 +10,10 @@ export class FormComponent {
   inputText: string = '';
 
   constructor(private sharedData: SharedDataService) {}
+
+  ngOnInit() {
+    this.sharedData.$buttonSubject.subscribe(() => {
+      this.sharedData.addToList(this.inputText);
+    });
+  }
 }

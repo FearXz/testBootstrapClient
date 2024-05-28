@@ -1,4 +1,7 @@
 <div>
   <h2>Result</h2>
-  <p *ngFor="let text of textList">{{ text }}</p>
+  <div class="d-flex" *ngFor="let text of textList">
+    <p>{{ text }}</p>
+    <button type="button" class="btn btn-danger">Elimina</button>
+  </div>
 </div>

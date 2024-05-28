@@ -1,10 +1,20 @@
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class SharedDataService {
   list: string[] = [];
+  $listSubject = new Subject<string[]>();
+  $buttonSubject = new Subject<void>();
 
-  constructor() {}
+  onFormClick(): void {
+    this.$buttonSubject.next();
+  }
+
+  addToList(text: string): void {
+    this.list.push(text);
+    this.$listSubject.next(this.list);
+  }
 }

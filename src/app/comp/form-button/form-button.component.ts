@@ -9,5 +9,7 @@ import { SharedDataService } from '../../services/shared-data.service';
 export class FormButtonComponent {
   constructor(private sharedData: SharedDataService) {}
 
-  emitClick() {}
+  emitClick() {
+    this.sharedData.onFormClick();
+  }
 }
