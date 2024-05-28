@@ -7,6 +7,7 @@ import { NavbarComponent } from './comp/navbar/navbar.component';
 import { FormComponent } from './comp/form/form.component';
 import { FormButtonComponent } from './comp/form-button/form-button.component';
 import { ResultAreaComponent } from './comp/result-area/result-area.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -14,13 +15,10 @@ import { ResultAreaComponent } from './comp/result-area/result-area.component';
     NavbarComponent,
     FormComponent,
     FormButtonComponent,
-    ResultAreaComponent
+    ResultAreaComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
