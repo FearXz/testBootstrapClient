@@ -7,10 +7,10 @@ import { Subject } from 'rxjs';
 export class SharedDataService {
   list: string[] = [];
 
-  $listSubject = new Subject<string[]>();
+  private $listSubject = new Subject<string[]>();
   $listObservable = this.$listSubject.asObservable();
 
-  $buttonSubject = new Subject<void>();
+  private $buttonSubject = new Subject<void>();
   $buttonObservable = this.$buttonSubject.asObservable();
 
   onFormClick(): void {
