@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { SharedDataService } from '../../services/shared-data.service';
 
 @Component({
@@ -6,7 +6,7 @@ import { SharedDataService } from '../../services/shared-data.service';
   templateUrl: './form.component.html',
   styleUrl: './form.component.css',
 })
-export class FormComponent {
+export class FormComponent implements OnInit {
   inputText: string = '';
 
   constructor(private sharedData: SharedDataService) {}

@@ -1,7 +1,9 @@
 <div>
   <h2>Result</h2>
-  <div class="d-flex" *ngFor="let text of textList">
+  <div class="d-flex" *ngFor="let text of textList; let i = index">
     <p>{{ text }}</p>
-    <button type="button" class="btn btn-danger">Elimina</button>
+    <button type="button" class="btn btn-danger" (click)="emitDelete(i)">
+      Elimina
+    </button>
   </div>
 </div>

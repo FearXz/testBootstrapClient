@@ -17,4 +17,9 @@ export class SharedDataService {
     this.list.push(text);
     this.$listSubject.next(this.list);
   }
+
+  deleteFromList(index: number): void {
+    this.list.splice(index, 1);
+    this.$listSubject.next(this.list);
+  }
 }

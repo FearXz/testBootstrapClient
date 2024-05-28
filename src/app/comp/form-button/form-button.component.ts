@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { SharedDataService } from '../../services/shared-data.service';
 
 @Component({
@@ -11,5 +11,6 @@ export class FormButtonComponent {
 
   emitClick() {
     this.sharedData.onFormClick();
+    console.log('Form button clicked');
   }
 }
