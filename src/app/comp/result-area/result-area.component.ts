@@ -18,12 +18,12 @@ export class ResultAreaComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.sharedData.$listSubject.subscribe((list) => {
+    this.subscription = this.sharedData.$listObservable.subscribe((list) => {
       this.textList = list;
     });
   }
 
   ngOnDestroy() {
-    this.sharedData.$listSubject.unsubscribe();
+    if (this.subscription) this.subscription.unsubscribe();
   }
 }

@@ -12,7 +12,7 @@ export class FormComponent implements OnInit {
   constructor(private sharedData: SharedDataService) {}
 
   ngOnInit() {
-    this.sharedData.$buttonSubject.subscribe(() => {
+    this.sharedData.$buttonObservable.subscribe(() => {
       this.sharedData.addToList(this.inputText);
     });
   }
